@@ -7,6 +7,7 @@ public class WordManager : MonoBehaviour
     public List<Word> words;
     private bool hasActiveWord;
     private Word activeWord;
+    public WordSpawner wordSpawner;
 
     private void Start()
     {
@@ -18,8 +19,10 @@ public class WordManager : MonoBehaviour
 
     public void AddWord()
     {
-        Word word = new Word(WordGenerator.GetRandomWord());
-        Debug.Log(word.word);
+
+        Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
+
+        words.Add(word);
     }
 
     public void TypeLetter (char letter)
