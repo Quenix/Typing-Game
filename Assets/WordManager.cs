@@ -9,14 +9,6 @@ public class WordManager : MonoBehaviour
     private Word activeWord;
     public WordSpawner wordSpawner;
 
-    private void Start()
-    {
-        AddWord();
-        AddWord();
-        AddWord();
-
-    }
-
     public void AddWord()
     {
 
