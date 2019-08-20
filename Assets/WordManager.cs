@@ -8,6 +8,7 @@ public class WordManager : MonoBehaviour
     private bool hasActiveWord;
     private Word activeWord;
     public WordSpawner wordSpawner;
+    public WordScore wordScore;
 
     public void AddWord()
     {
@@ -43,6 +44,9 @@ public class WordManager : MonoBehaviour
         {
             hasActiveWord = false;
             words.Remove(activeWord);
+            wordScore.IncreaseScore();
         }
+    
     }
+    
 }

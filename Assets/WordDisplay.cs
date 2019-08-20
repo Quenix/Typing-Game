@@ -7,6 +7,8 @@ public class WordDisplay : MonoBehaviour
 {
     public Text text;
     public float fallSpeed = 1f;
+    public List<Word> words;
+
     public void SetWord (string word)
     {
         text.text = word;
@@ -26,6 +28,10 @@ public class WordDisplay : MonoBehaviour
 
     private void Update ()
     {
+        /*if(transform.position.y < -4)
+        {
+            Destroy(gameObject);
+        }*/
         transform.Translate(0f, -fallSpeed * Time.deltaTime, 0f);
     }
 }

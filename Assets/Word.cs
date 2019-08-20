@@ -8,7 +8,7 @@ public class Word
 
     public string word;
     private int typeIndex;
-
+   
     WordDisplay display;
 
     public Word (string _word, WordDisplay _display)
@@ -40,5 +40,15 @@ public class Word
         }
 
         return wordTyped;
+    }
+
+    public bool IsOutOfBorder()
+    {
+        bool isOutOfBorder = (display.transform.position.y <= -4);
+        
+        if(isOutOfBorder)
+            display.RemoveWord();
+
+        return isOutOfBorder;
     }
 }
