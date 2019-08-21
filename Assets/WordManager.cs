@@ -10,6 +10,8 @@ public class WordManager : MonoBehaviour
     private Word activeWord;
     public WordSpawner wordSpawner;
     public WordScore wordScore;
+    public AudioSource hit;
+    public AudioSource miss;
 
     public void AddWord()
     {
@@ -28,6 +30,7 @@ public class WordManager : MonoBehaviour
                 try
                 {
                     activeWord.TypeLetter();
+                    hit.Play();
                 }
                 catch(Exception e)
                 {
@@ -45,6 +48,7 @@ public class WordManager : MonoBehaviour
                     activeWord = word;
                     hasActiveWord = true;
                     word.TypeLetter();
+                    hit.Play();
                     break;
                 }
             }
