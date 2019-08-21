@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,7 +25,16 @@ public class WordManager : MonoBehaviour
         {
             if (activeWord.GetNextLetter() == letter)
             {
-                activeWord.TypeLetter();
+                try
+                {
+                    activeWord.TypeLetter();
+                }
+                catch(Exception e)
+                {
+                    DesactiveWord();
+                    RemoveActiveWord(activeWord);
+                }
+                
             }
         } else
         {
@@ -48,5 +58,20 @@ public class WordManager : MonoBehaviour
         }
     
     }
-    
+
+    public void DesactiveWord()
+    {
+        hasActiveWord = false;
+    }
+
+    public Word GetActiveWord()
+    {
+        return activeWord;
+    }
+
+    public void RemoveActiveWord(Word _activeWord)
+    {
+        words.Remove(_activeWord);
+    }
+
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class WordGenerator : MonoBehaviour
 {
 
-   private static string[] wordList = {"teste", "vez", "asd", "dsa", "zxc", "qwe"};
+   private static string[] wordList = {"mesmo", "chato", "teste", "abacate", "legumes", "sol", "muitos", "sorriso", "morango", "você", "louco"};
 
    public static string GetRandomWord ()
    {

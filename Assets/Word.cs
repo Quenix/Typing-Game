@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class Word
 
     public string word;
     private int typeIndex;
-   
+    private float acceleration;
     WordDisplay display;
 
     public Word (string _word, WordDisplay _display)
@@ -33,22 +34,19 @@ public class Word
 
     public bool WordTyped ()
     {
-        bool wordTyped = (typeIndex >= word.Length);
-        if (wordTyped)
+        try
         {
-            display.RemoveWord();
+            bool wordTyped = (typeIndex >= word.Length);
+            if (wordTyped)
+            {
+                display.RemoveWord();
+            }
+
+            return wordTyped;
         }
-
-        return wordTyped;
-    }
-
-    public bool IsOutOfBorder()
-    {
-        bool isOutOfBorder = (display.transform.position.y <= -4);
-        
-        if(isOutOfBorder)
-            display.RemoveWord();
-
-        return isOutOfBorder;
+        catch(Exception e)
+        {
+            return true;
+        }
     }
 }
