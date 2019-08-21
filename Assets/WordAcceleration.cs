@@ -24,10 +24,19 @@ public class WordAcceleration : MonoBehaviour
     public void SetLevel(float level)
     {
         Debug.Log("Level " + level);
-        Debug.Log("Velocidade: " + acceleration);
-        acceleration *= level;
+        if(acceleration < 2f)
+        {
+            acceleration += level / 15;
+        }
 
+        if(WordTimer.wordDelay < 0.5f)
+        {
+            WordTimer.wordDelay *= 0.9f;
+        }
         
+        Debug.Log("Velocidade: " + acceleration);
+
+
 
     }
 }

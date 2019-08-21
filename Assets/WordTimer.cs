@@ -5,10 +5,14 @@ using UnityEngine;
 public class WordTimer : MonoBehaviour
 {
     public WordManager wordManager;
-    public float wordDelay = 1.5f;
+    public static float wordDelay;
 
     private float nextWordTime = 0f;
 
+    private void Start()
+    {
+        wordDelay = 1.5f;
+    }
     private void Update ()
     {
         if (Time.time >= nextWordTime)

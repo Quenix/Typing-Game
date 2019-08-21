@@ -21,7 +21,7 @@ public class WordScore : MonoBehaviour
         score++;
         textScore.text = score.ToString();
 
-        if(score % 10 == 0)
+        if(score % 5 == 0)
         {
             wordAcceleration.SetLevel(score/10);
         }
