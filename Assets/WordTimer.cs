@@ -11,7 +11,7 @@ public class WordTimer : MonoBehaviour
 
     private void Start()
     {
-        wordDelay = 1.5f;
+        wordDelay = 1.0f;
     }
     private void Update ()
     {

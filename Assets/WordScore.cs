@@ -20,11 +20,13 @@ public class WordScore : MonoBehaviour
         //textScore.text = score.ToString();
         score++;
         textScore.text = score.ToString();
+        ScoreEffect(textScore.gameObject);
 
-        if(score % 5 == 0)
+        if (score % 5 == 0)
         {
             wordAcceleration.SetLevel(score);
-            AudioManager.PlaySound("levelUp");
+            //todo
+            //AudioManager.PlaySound("levelUp");
         }
         
     }
@@ -32,5 +34,10 @@ public class WordScore : MonoBehaviour
     public float GetScore()
     {
         return score;
+    }
+
+    private void ScoreEffect(GameObject gameObject)
+    {
+        gameObject.GetComponent<ScoreAnimator>().ShakeMe();
     }
 }
