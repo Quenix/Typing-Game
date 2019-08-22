@@ -23,7 +23,8 @@ public class WordScore : MonoBehaviour
 
         if(score % 5 == 0)
         {
-            wordAcceleration.SetLevel(score/10);
+            wordAcceleration.SetLevel(score);
+            AudioManager.PlaySound("levelUp");
         }
         
     }

@@ -30,7 +30,8 @@ public class WordManager : MonoBehaviour
                 try
                 {
                     activeWord.TypeLetter();
-                    hit.Play();
+                    //TODO
+                    AudioManager.PlaySound("hit");
                 }
                 catch(Exception e)
                 {
@@ -48,7 +49,8 @@ public class WordManager : MonoBehaviour
                     activeWord = word;
                     hasActiveWord = true;
                     word.TypeLetter();
-                    hit.Play();
+                    //TODO
+                    AudioManager.PlaySound("hit");
                     break;
                 }
             }
@@ -58,6 +60,7 @@ public class WordManager : MonoBehaviour
         {
             hasActiveWord = false;
             words.Remove(activeWord);
+            AudioManager.PlaySound("kill");
             wordScore.IncreaseScore();
         }
     

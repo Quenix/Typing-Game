@@ -8,7 +8,7 @@ public class WordAcceleration : MonoBehaviour
 
     void Start()
     {
-        acceleration = 0.5f;
+        acceleration = 0.2f;
     }
 
     public float GetAcceleration()
@@ -24,9 +24,10 @@ public class WordAcceleration : MonoBehaviour
     public void SetLevel(float level)
     {
         Debug.Log("Level " + level);
+
         if(acceleration < 2f)
         {
-            acceleration += level / 15;
+            acceleration += level / 25;
         }
 
         if(WordTimer.wordDelay < 0.5f)
